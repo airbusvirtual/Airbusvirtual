@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Fleets</title>
+    <link rel="stylesheet" href="i.css?v=2">
+    <!-- FontAwesome (Icons ke liye) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <button class="menu" onclick="togglemenu()">&#9776;</button>
+        <div class="navbar">
+            <div class="logo"></div>
+        </div>
+    </header>
+
+    <div id="mymenu" class="sidemenu">
+        <button class="close-btn" onclick="togglemenu()">&times;</button>
+        <div class="menu-logo-container">
+            <img src="abv.png" alt="Airbus Virtual Logo" class="menu-logo-img">
+        </div>
+        <a href="Airbusvirtual.html">Home</a>
+        <a href="about us.html">About Us</a>
+        <a href="our fleet.html">Our Fleets</a>
+        <a href="our hub.html">Our Hubs</a>
+        <a href="our staff.html">Our Staff</a>
+        <a href="apply.html">Apply</a>
+        <a href="rank.html">Rank</a>
+        <a href="tadm.html">Testbed And Delivery Missions</a>
+    </div>
+
+    <img src="our Fleet.png" alt="Airbus virtual fleet logo">
+    <main class="fleet-container" id="fleet-container">
+    </main>
+
+    <script>
+        // Data Array
+        const fleetData = [
+            { id: 1, name: "A220-300", rank: "First Officer", hours: "0h", range: "3,600 nm", speed: "Mach 0.78", ceiling: "FL410", pax: "160", img: "A220-300.png", desc: "Modern, efficient, and perfect for short to medium routes." },
+            { id: 2, name: "A318-100", rank: "First Officer", hours: "0h", range: "3,099 nm", speed: "Mach 0.78", ceiling: "FL410", pax: "136", img: "A318-100.png", desc: "The 'Baby Bus', great for steep approaches and short runways." },
+            { id: 3, name: "A319-100", rank: "Senior First Officer", hours: "50h", range: "3,747 nm", speed: "Mach 0.78", ceiling: "FL410", pax: "136", img: "A319-100.png", desc: "A shortened, longer-range version of the standard A320." },
+            { id: 4, name: "A320-200", rank: "Senior First Officer", hours: "50h", range: "3,300 nm", speed: "Mach 0.78", ceiling: "FL410", pax: "175", img: "A320-200.png", desc: "The backbone of the short-haul global fleet." },
+            { id: 5, name: "A321-200", rank: "Captain", hours: "100h", range: "3,202 nm", speed: "Mach 0.78", ceiling: "FL410", pax: "239", img: "A321-200.png", desc: "Extended fuselage for higher capacity and efficiency." },
+            { id: 6, name: "A321neo", rank: "Captain", hours: "100h", range: "4,698 nm", speed: "460 kts", ceiling: "FL398", pax: "244", img: "A321neo.png", desc: "New engine option bringing unmatched range to narrowbodies." },
+            { id: 7, name: "A330-200", rank: "Captain", hours: "100h", range: "7,262 nm", speed: "Mach 0.82", ceiling: "FL411", pax: "406", img: "A330-200.png", desc: "Versatile twin-engine widebody for medium to long hauls." },
+            { id: 8, name: "A330-200F", rank: "Captain", hours: "100h", range: "7,262 nm", speed: "Mach 0.82", ceiling: "FL420", pax: "Cargo", img: "A330-200F.png", desc: "Dedicated freighter variant of the A330 series." },
+            { id: 9, name: "A330-300", rank: "Senior Captain", hours: "200h", range: "7,262 nm", speed: "Mach 0.82", ceiling: "FL420", pax: "287", img: "A330-300.png", desc: "Stretched version providing high capacity for regional routes." },
+            { id: 10, name: "A330-800neo", rank: "Senior Captain", hours: "200h", range: "8,099 nm", speed: "Mach 0.82", ceiling: "FL410", pax: "406", img: "A330-800neo.png", desc: "Next-generation efficiency for the A330-200 replacement." },
+            { id: 11, name: "A330-900neo", rank: "Senior Captain", hours: "200h", range: "7,200 nm", speed: "Mach 0.82", ceiling: "FL415", pax: "460", img: "A330-900neo.png", desc: "Highly economical widebody featuring advanced aerodynamics." },
+            { id: 12, name: "A340-600", rank: "Commander", hours: "350h", range: "7,802 nm", speed: "Mach 0.82", ceiling: "FL410", pax: "370", img: "A340-600.png", desc: "Elegant quad-engine long-haul aircraft with massive capacity." },
+            { id: 13, name: "A350-900", rank: "Commander", hours: "350h", range: "8,099 nm", speed: "Mach 0.85", ceiling: "FL431", pax: "440", img: "A350-900.png", desc: "State-of-the-art composite widebody redefining long-haul comfort." },
+            { id: 14, name: "A350-1000", rank: "Senior Commander", hours: "700h", range: "10,259 nm", speed: "Mach 0.85", ceiling: "FL431", pax: "480", img: "A350-1000.png", desc: "Stretched ultra-long-range twin with maximum capacity." },
+            { id: 15, name: "A380-800", rank: "Senior Commander", hours: "700h", range: "7,991 nm", speed: "Mach 0.85", ceiling: "FL430", pax: "779", img: "A380-800.png", desc: "Iconic double-decker. The largest passenger aircraft in the world." }
+        ];
+
+        const container = document.getElementById('fleet-container');
+
+        fleetData.forEach(plane => {
+            const card = document.createElement('div');
+            card.className = 'fleet-card';
+            let paxText = plane.pax === "Cargo" ? "Cargo Only" : `Pax: ${plane.pax}`;
+
+            card.innerHTML = `
+                <div class="card-top">
+                    <img src="${plane.img}" alt="${plane.name}">
+                </div>
+                <div class="card-bottom">
+                    <h2>${plane.name}</h2>
+                    <p class="desc">${plane.desc}</p>
+                    
+                    <div class="pills-container">
+                        <span class="pill"><i class="fa-solid fa-users"></i> ${paxText}</span>
+                        <span class="pill"><i class="fa-solid fa-earth-americas"></i> Range: ${plane.range}</span>
+                        <span class="pill"><i class="fa-solid fa-gauge-high"></i> ${plane.speed}</span>
+                    </div>
+
+                    <div class="rank-info">
+                        <span class="glow-dot"></span>
+                        Unlocks at <strong>${plane.rank} (${plane.hours})</strong>
+                    </div>
+
+                    <div class="dropdown-toggle" data-id="${plane.id}">
+                        <span>View specifications</span>
+                        <i id="icon-${plane.id}" class="fa-solid fa-chevron-down"></i>
+                    </div>
+
+                    <div class="hidden-specs" id="specs-${plane.id}">
+                        <div class="spec-item">
+                            <span>Maximum Ceiling</span>
+                            <strong>${plane.ceiling}</strong>
+                        </div>
+                    </div>
+                </div>
+            `;
+            container.appendChild(card);
+        });
+        container.addEventListener('click', function(event) {
+            let toggleBtn = event.target.closest('.dropdown-toggle');
+            if (toggleBtn) {
+                let currentId = toggleBtn.getAttribute('data-id');
+                let specDiv = document.getElementById('specs-' + currentId);
+                let icon = document.getElementById('icon-' + currentId);
+                
+                if (specDiv && icon) {
+                    if (specDiv.style.display === "block") {
+                        specDiv.style.display = "none";
+                        icon.style.transform = "rotate(0deg)";
+                    } else {
+                        specDiv.style.display = "block";
+                        icon.style.transform = "rotate(180deg)";
+                    }
+                }
+            }
+        });
+    </script>
+    
+    <script src="i.js"></script>
+  <footer class="footer-container">
+    <div class="footer-brand-section">
+        <img class="footer-logo" src="abv.png" alt="Airbus Virtual Logo">
+        
+        <p class="footer-description">
+            The virtual aircraft manufacturer on Infinite Flight, dedicated to test flights, engineering excellence, and global factory deliveries to virtual airlines.
+        </p>
+        
+        <p class="footer-disclaimer">
+            Airbus Virtual is a non-profit organisation and is not associated, endorsed, or affiliated with Airbus or its subsidiaries.
+        </p>
+    </div>
+    <div class="footer-links-section">
+        <div class="footer-column">
+            <h4>COMMUNITY</h4>
+            <ul>
+                <li><a href="#">IFC Forum</a></li>
+                <li><a href="#">Official Thread</a></li>
+                <li><a href="#">Infinite Flight</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>OPERATIONS</h4>
+            <ul>
+                <li><a href="our fleet">Fleet</a></li>
+                <li><a href="rank">Rank</a></li>
+                <li><a href="our hub">Hub</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h4>ABOUT ABVA</h4>
+            <ul>
+                <li><a href="about us">About Us</a></li>
+                <li><a href="#">Our Partners</a></li>
+            </ul>
+        </div>
+    </div>
+  </footer>
+</body>
+</html>
