@@ -1370,3 +1370,79 @@ body {
     margin-top: -6px;
     margin-bottom: 20px;
 }
+
+.apply-agreement-card {
+    max-width: 90%;
+    margin: 20px auto 15px auto;
+    background: #ffffff;
+    border-radius: 14px;
+    padding: 16px 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    display: flex;
+    align-items: center;
+}
+
+.custom-checkbox-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    cursor: pointer;
+    font-size: 13px;
+    color: #0b1f3a;
+    font-weight: 500;
+    line-height: 1.4;
+    user-select: none;
+}
+
+.custom-checkbox-container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    height: 22px;
+    width: 22px;
+    background-color: #f0f3f8;
+    border: 2px solid #002b49;
+    border-radius: 6px;
+    margin-right: 14px;
+    flex-shrink: 0;
+    display: inline-block;
+    position: relative;
+    transition: all 0.2s ease;
+}
+
+.custom-checkbox-container:hover input ~ .checkmark {
+    background-color: #e2e8f0;
+}
+
+.custom-checkbox-container input:checked ~ .checkmark {
+    background-color: #002b49;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.custom-checkbox-container input:checked ~ .checkmark:after {
+    display: block;
+}
+
+.custom-checkbox-container .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.agreement-text {
+    display: inline-block;
+}
