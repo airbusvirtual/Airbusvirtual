@@ -5,14 +5,11 @@
   box-sizing: border-box;
 }
 
-/* Hero / Banner Image height fix */
 img[src="N.png"] {
     width: 100% !important;
-    max-height: 250px !important;
+    height: 200px !important; /* height ko 200px tak fix kar dega */
     object-fit: cover !important;
     display: block !important;
-    margin: 0 auto !important;
-}
 
 .header {
   height: 60px;
