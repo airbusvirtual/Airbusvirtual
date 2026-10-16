@@ -5,19 +5,13 @@
   box-sizing: border-box;
 }
 
-/* Banner aur Hero Image ki height kam karne ke liye */
-.hero, .banner {
-    width: 100%;
-    max-height: 50vh; /* Screen ka aadha hissa cover karega */
-    overflow: hidden;
-}
-
-.hero img, .banner img, img[src="N.png"] {
-    width: 100%;
-    max-height: 300px; /* Mobile par zyada lamba nahi dikhega */
-    object-fit: cover; /* Photo kheenchegi nahi, clean fit hogi */
-    display: block;
-    margin: 0 auto;
+/* Hero / Banner Image height fix */
+img[src*="N.png"] {
+    width: 100% !important;
+    max-height: 250px !important;
+    object-fit: cover !important;
+    display: block !important;
+    margin: 0 auto !important;
 }
 
 .header {
