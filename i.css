@@ -5,12 +5,6 @@
   box-sizing: border-box;
 }
 
-img[src="N.png"] {
-    width: 100%;
-    height: auto;
-    padding-top 59px;
-}
-
 .header {
   height: 60px;
   width: 100px
