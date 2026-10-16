@@ -184,10 +184,9 @@
 }
 
 img {
-  height: 100%;
+  height: auto;
   width: 100%;
   padding-top: 59px;
-  object-fit: cover;
 }
 
 .welcome {
