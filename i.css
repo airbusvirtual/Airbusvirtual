@@ -6,7 +6,7 @@
 }
 
 /* Hero / Banner Image height fix */
-img[src*="N.png"] {
+img[src="N.png"] {
     width: 100% !important;
     max-height: 250px !important;
     object-fit: cover !important;
