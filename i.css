@@ -1140,6 +1140,11 @@ body {
     margin-bottom: 4px;
 }
 
+.staff-name a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
 .staff-role {
     color: rgba(255, 255, 255, 0.75);
     font-size: 0.75rem;
