@@ -1507,3 +1507,24 @@ body {
   margin: 0 0 24px 0;
   font-family: sans-serif;
 }
+
+.hub-intro-section {
+  width: 90% !important;
+  max-width: 480px !important;
+  margin: 105px auto 0 auto !important;
+  padding-bottom: 0 !important;
+}
+
+.hub-main-desc {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.hub-container,
+.hubs-container,
+.hub-grid,
+.hubs-grid,
+main {
+  margin-top: 30px !important;
+  padding-top: 0 !important;
+}
