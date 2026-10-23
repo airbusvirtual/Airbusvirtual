@@ -1266,22 +1266,22 @@ body {
 }
 
 .ranks-main {
-    max-width: 800px;
-    margin: 0px auto;
-    padding: 90px 18px 30px 18px;
-    font-family: sans-serif;
+  max-width: 800px;
+  margin: 0px auto;
+  padding: 120px 18px 30px 18px !important;
+  font-family: sans-serif;
 }
 
 .ranks-intro {
-    margin-bottom: 28px;
+  margin-bottom: 28px;
 }
 
 .main-heading {
-    font-size: 26px;
-    font-weight: 800;
-    color: #0b1d3a;
-    margin-top: 0px;
-    margin-bottom: 12px;
+  font-size: 26px;
+  font-weight: 800;
+  color: #0b1d3a;
+  margin-top: 0px !important;
+  margin-bottom: 12px;
 }
 
 .sub-description {
