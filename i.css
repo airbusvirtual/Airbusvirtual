@@ -440,9 +440,9 @@ body {
 }
 
 .about-section {
-    width: 100%;
-    margin-top: 60px;
-    padding-bottom: 50px;
+  width: 100%;
+  margin-top: 105px !important;
+  padding-bottom: 50px;
 }
 
 .hero-image {
@@ -460,12 +460,12 @@ body {
 }
 
 .section-title {
-    color: #0b1a30;
-    font-size: 38px;
-    font-weight: 800;
-    margin-top: 30px;
-    margin-bottom: 25px;
-    text-align: left;
+  color: #0b1a30;
+  font-size: 38px;
+  font-weight: 800;
+  margin-top: 0px !important;
+  margin-bottom: 25px;
+  text-align: left;
 }
 
 .content-card {
