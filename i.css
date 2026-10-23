@@ -585,10 +585,10 @@ body {
 }
 
 .info-container {
-    padding: 2rem 5%;
-    max-width: 900px;
-    margin: 0 auto; 
-    font-family: Arial, sans-serif;
+  padding: 1rem 5% 2rem 5%;
+  max-width: 900px;
+  margin: 95px auto 0 auto;
+  font-family: Arial, sans-serif;
 }
 
 .info-title {
